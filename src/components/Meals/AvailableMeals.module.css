@@ -1,0 +1,29 @@
+.ameals {
+    list-style-type: none;
+    background-color: white;
+    width: 60vw;
+    margin: 5vh auto;
+    padding: 2rem;
+    border-radius: 10px;
+    line-height: 1.5rem;
+    font-size: large;
+}
+
+.alist {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.aname {
+    font-weight: bold;
+}
+
+.adesc {
+    font-style: italic;
+}
+
+.aprice {
+    font-size: larger;
+    font-weight: bold;
+    color: #8a2b06;
+}
