@@ -1,0 +1,35 @@
+.header {
+    width: 100vw;
+    height: 25vh;
+    background: url('./meals.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headcontent {
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    background-color: #8a2b06;
+    padding: 2vh 10vw;
+}
+.cart{
+    display: flex;
+    gap: 10px;
+    background-color: #4d1601;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.btn{
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.span{
+    background-color: #8a2b06;
+    padding: 5px;
+    border-radius: 10px;
+}
