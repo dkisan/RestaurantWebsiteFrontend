@@ -21,6 +21,7 @@
     background-color: #4d1601;
     padding: 10px 20px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .btn{
     background: none;
