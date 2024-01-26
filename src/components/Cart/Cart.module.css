@@ -1,0 +1,39 @@
+.backdrop{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+}
+.content{
+    margin-top: 10vh;
+    width: 50vw;
+    height: max-content;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+}
+.actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 1rem;
+}
+.clsbtn{
+    background-color: white;
+    color: #8a2b06;
+    cursor: pointer;
+    border: 1px solid #8a2b06;
+}
+
+.total{
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between;
+}
