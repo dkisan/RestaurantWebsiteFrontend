@@ -4,16 +4,30 @@ import ReactDOM from 'react-dom'
 import CartContext from '../../store/CartContext'
 
 const Cartlist = (props) => {
+    const ctx = useContext(CartContext)
+    const increaseItem = () => {
+        const obj = {
+            amount: 1,
+            item: { ...props.item.item }
+        }
+        ctx.addItem(obj)
+    }
+
+    const decreaseItem = () => {
+        ctx.removeItem(props.item.item.id)
+    }
     return (
         <div className={classes.listyle}>
-            <li className={classes.lisp}>
-                <span>{props.name}</span>
-                <span>{props.amount}</span>
-                <span>${props.price}</span>
+            <li className={classes.linstyle}>
+                <span className={classes.nm}>{props.item.item.name}</span>
+                <div className={classes.lisp}>
+                    <span className={classes.prc}>${props.item.item.price}</span>
+                    <span className={classes.amt}>x{props.item.amount}</span>
+                </div>
             </li>
             <div className={classes.lisp}>
-                <button>+</button>
-                <button>-</button>
+                <button onClick={increaseItem}>+</button>
+                <button onClick={decreaseItem}>-</button>
             </div>
         </div>
     )
@@ -26,12 +40,12 @@ const CartOverlay = (props) => {
             <div className={classes.content} onClick={(event) => event.stopPropagation()}>
                 <ul>
                     {ctx.items.map((c, idx) => {
-                        return <Cartlist name={c.item.name} price={c.item.price} amount={c.amount} key={idx} />
+                        return <Cartlist item={c} key={idx} />
                     })}
                 </ul>
                 <div className={classes.total}>
                     <span>Total amount</span>
-                    <span>{ctx.totalamount}</span>
+                    <span>{ctx.totalamount.toFixed(2)}</span>
                 </div>
                 <div className={classes.actions}>
                     <button className={classes.clsbtn} onClick={props.hideCartHandler}>Close</button>
