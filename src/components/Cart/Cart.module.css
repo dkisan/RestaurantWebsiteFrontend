@@ -1,4 +1,4 @@
-.backdrop{
+.backdrop {
     position: absolute;
     left: 0;
     top: 0;
@@ -9,7 +9,8 @@
     display: flex;
     justify-content: center;
 }
-.content{
+
+.content {
     margin-top: 10vh;
     width: 50vw;
     height: max-content;
@@ -17,23 +18,42 @@
     padding: 1rem;
     background-color: white;
 }
-.actions{
+
+.actions {
     display: flex;
     justify-content: flex-end;
     gap: 5px;
     margin-top: 1rem;
 }
-.clsbtn{
+
+.clsbtn {
     background-color: white;
     color: #8a2b06;
     cursor: pointer;
     border: 1px solid #8a2b06;
 }
 
-.total{
+.total {
     margin-top: 10px;
     font-weight: bold;
     font-size: x-large;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style-type: none;
+}
+
+.lisp {
+    display: flex;
+    gap: 5px;
+}
+
+.listyle {
     display: flex;
     justify-content: space-between;
 }

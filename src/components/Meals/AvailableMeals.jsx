@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import classes from './AvailableMeals.module.css'
 import MealForm from './MealForm';
+import CartContext from '../../store/CartContext';
 
 const DUMMY_MEALS = [
     {
@@ -28,7 +30,16 @@ const DUMMY_MEALS = [
     },
 ];
 
+
 const AvailableMeals = () => {
+    const ctx = useContext(CartContext)
+
+    const addToCartHandler = (n, k) => {
+        const item = DUMMY_MEALS.filter(a => a.id === k)
+        const obj = {item:item[0],amount: +n}
+        ctx.addItem(obj)
+    }
+
     return (
         <div className={classes.ameals}>
             {DUMMY_MEALS.map((am) => {
@@ -38,7 +49,7 @@ const AvailableMeals = () => {
                         <li className={classes.adesc}>{am.description}</li>
                         <li className={classes.aprice}>${am.price}</li>
                     </div>
-                    <MealForm />
+                    <MealForm addToCartHandler={addToCartHandler} key={am.id} id={am.id} />
                 </div>
             })}
         </div>
